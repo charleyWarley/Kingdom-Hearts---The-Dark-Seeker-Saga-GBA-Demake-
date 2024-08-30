@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://s445l70f658b"]
+
+[ext_resource type="FontFile" uid="uid://d2b6mtn6lm7wg" path="res://fonts/Early GameBoy.ttf" id="1_bxt74"]
+
+[resource]
+default_font = ExtResource("1_bxt74")
+default_font_size = 6

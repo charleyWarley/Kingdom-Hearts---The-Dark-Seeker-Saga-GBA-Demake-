@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cc3n4eo40l7kq"
+path="res://.godot/imported/se_xig_weap02_WAVE_003.wav-992bda148ead5ae1997b111c05897c89.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Xig Weapon/se_xig_weap02_WAVE/se_xig_weap02_WAVE_003.wav"
+dest_files=["res://.godot/imported/se_xig_weap02_WAVE_003.wav-992bda148ead5ae1997b111c05897c89.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

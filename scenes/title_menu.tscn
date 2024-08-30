@@ -1,0 +1,316 @@
+[gd_scene load_steps=22 format=3 uid="uid://b6kquduk311op"]
+
+[ext_resource type="Texture2D" uid="uid://bkepy0fmq4cws" path="res://images/kh1-logo-large.png" id="1_2fpro"]
+[ext_resource type="Texture2D" uid="uid://c2xvurxijjq7e" path="res://images/sora-watercolor.jpg" id="1_3ipf6"]
+[ext_resource type="Script" path="res://scripts/title_menu.gd" id="1_ix6lp"]
+[ext_resource type="AudioStream" uid="uid://car1dvoe3mnrs" path="res://audio/music/Main Theme.wav" id="2_u0ged"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="3_1y6k8"]
+[ext_resource type="Script" path="res://scenes/music_player.gd" id="3_frcp3"]
+[ext_resource type="Theme" uid="uid://cpxd0rm5wk0ep" path="res://scenes/main_theme.tres" id="4_2g27i"]
+[ext_resource type="Script" path="res://scripts/developer_tag.gd" id="4_2hnpg"]
+[ext_resource type="Script" path="res://scripts/logo.gd" id="4_wixua"]
+[ext_resource type="Script" path="res://scripts/sora_image.gd" id="5_8imgo"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="6_413oa"]
+[ext_resource type="Script" path="res://scripts/gradient.gd" id="6_pq6f8"]
+[ext_resource type="Script" path="res://scripts/new_game_button.gd" id="12_eogri"]
+[ext_resource type="Texture2D" uid="uid://bb7hk5dhq4tfd" path="res://images/sprite_sheets/blinker.png" id="13_1v8eu"]
+
+[sub_resource type="Gradient" id="Gradient_bh1g2"]
+offsets = PackedFloat32Array(0.0103448, 1)
+colors = PackedColorArray(0.956863, 0.929412, 0.941176, 0.780392, 0.678431, 0.45098, 0.513726, 0.847059)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_njeyp"]
+gradient = SubResource("Gradient_bh1g2")
+width = 28
+height = 12
+
+[sub_resource type="Animation" id="Animation_p60yq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1smin"]
+resource_name = "blink"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4xje3"]
+_data = {
+"RESET": SubResource("Animation_p60yq"),
+"blink": SubResource("Animation_1smin")
+}
+
+[sub_resource type="Gradient" id="Gradient_73qm2"]
+offsets = PackedFloat32Array(0, 0.327586, 0.644828, 1)
+colors = PackedColorArray(1, 1, 1, 0.290196, 0.658824, 0.427451, 0.501961, 0.666667, 0.627451, 0.431373, 0.509804, 0.682353, 1, 1, 1, 0.513726)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7whdq"]
+gradient = SubResource("Gradient_73qm2")
+width = 42
+height = 6
+
+[node name="title_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ix6lp")
+
+[node name="music_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u0ged")
+autoplay = true
+script = ExtResource("3_frcp3")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_1y6k8")
+
+[node name="developer_tag" type="Control" parent="."]
+layout_mode = 1
+anchor_top = 0.706
+anchor_bottom = 0.706
+offset_top = -88.96
+offset_right = 240.0
+offset_bottom = 0.0399933
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_2hnpg")
+
+[node name="Timer" type="Timer" parent="developer_tag"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="developer_tag"]
+layout_mode = 2
+offset_left = 71.0
+offset_top = 81.0
+offset_right = 133.0
+offset_bottom = 92.0
+theme = ExtResource("4_2g27i")
+theme_override_colors/default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+theme_override_font_sizes/normal_font_size = 6
+text = "The Birb"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="developer_tag"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 82.0
+offset_right = 76.0
+offset_bottom = 118.0
+theme = ExtResource("4_2g27i")
+theme_override_colors/default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+theme_override_font_sizes/normal_font_size = 5
+text = "developed  by"
+
+[node name="underbar2" type="ColorRect" parent="developer_tag"]
+layout_mode = 2
+offset_top = 88.0
+offset_right = 240.0
+offset_bottom = 89.0
+color = Color(0.321569, 0.321569, 0.321569, 1)
+
+[node name="sora_image" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -160.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_3ipf6")
+expand_mode = 1
+script = ExtResource("5_8imgo")
+
+[node name="logo" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1.0
+offset_top = 7.0
+offset_right = 157.0
+offset_bottom = 107.0
+texture = ExtResource("1_2fpro")
+expand_mode = 1
+script = ExtResource("4_wixua")
+
+[node name="Timer" type="Timer" parent="logo"]
+wait_time = 2.1
+autostart = true
+
+[node name="start_button" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 153.0
+offset_bottom = -7.0
+grow_vertical = 2
+script = ExtResource("6_413oa")
+
+[node name="gradient" type="Control" parent="start_button"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("6_pq6f8")
+
+[node name="TextureRect" type="TextureRect" parent="start_button/gradient"]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 2.0
+offset_right = 242.0
+offset_bottom = 14.0
+texture = SubResource("GradientTexture2D_njeyp")
+
+[node name="underbar" type="ColorRect" parent="start_button"]
+layout_mode = 0
+offset_left = 9.0
+offset_right = 240.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="blinker" type="Sprite2D" parent="start_button"]
+position = Vector2(14, -3)
+texture = ExtResource("13_1v8eu")
+hframes = 4
+region_enabled = true
+region_rect = Rect2(0, 0, 40, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="start_button/blinker"]
+libraries = {
+"": SubResource("AnimationLibrary_4xje3")
+}
+autoplay = "blink"
+
+[node name="button_text" type="RichTextLabel" parent="start_button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 23.0
+offset_top = -9.0
+offset_right = 121.0
+theme = ExtResource("4_2g27i")
+theme_override_colors/font_shadow_color = Color(0.6, 0.6, 0.6, 0.403922)
+text = "PRESS START"
+scroll_active = false
+
+[node name="Timer" type="Timer" parent="start_button"]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="new_game_button" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+script = ExtResource("12_eogri")
+
+[node name="blinker" type="Sprite2D" parent="new_game_button"]
+position = Vector2(8, -3)
+texture = ExtResource("13_1v8eu")
+hframes = 4
+region_enabled = true
+region_rect = Rect2(0, 0, 40, 10)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="new_game_button/blinker"]
+libraries = {
+"": SubResource("AnimationLibrary_4xje3")
+}
+autoplay = "blink"
+
+[node name="gradient" type="Control" parent="new_game_button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -72.0
+offset_right = 5.0
+offset_bottom = -72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="new_game_button/gradient"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 72.0
+offset_right = 155.0
+offset_bottom = 79.0
+texture = SubResource("GradientTexture2D_7whdq")
+
+[node name="underbar" type="ColorRect" parent="new_game_button"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 150.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="button_text" type="RichTextLabel" parent="new_game_button"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 17.0
+offset_top = -9.0
+offset_right = 141.0
+offset_bottom = 2.0
+theme = ExtResource("4_2g27i")
+theme_override_colors/font_shadow_color = Color(0.6, 0.6, 0.6, 0.403922)
+text = "new game"
+
+[node name="button_timer" type="Timer" parent="new_game_button"]
+wait_time = 1.4
+one_shot = true
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+
+[node name="fade_timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[connection signal="new_game_pressed" from="." to="." method="_on_new_game_pressed"]
+[connection signal="start_pressed" from="." to="logo" method="_on_button_pressed"]
+[connection signal="start_pressed" from="." to="start_button" method="_on_button_pressed"]
+[connection signal="start_pressed" from="." to="start_button/gradient" method="_on_title_menu_start_pressed"]
+[connection signal="start_pressed" from="." to="new_game_button" method="_on_title_menu_start_pressed"]
+[connection signal="timeout" from="developer_tag/Timer" to="developer_tag" method="_on_timer_timeout"]
+[connection signal="timeout" from="logo/Timer" to="sora_image" method="_on_timer_timeout"]
+[connection signal="timeout" from="logo/Timer" to="start_button" method="_on_timer_timeout"]
+[connection signal="timeout" from="logo/Timer" to="start_button/gradient" method="_on_timer_timeout"]
+[connection signal="timeout" from="start_button/Timer" to="start_button" method="_on_timer_timeout"]
+[connection signal="timeout" from="new_game_button/button_timer" to="new_game_button" method="_on_button_timer_timeout"]
+[connection signal="timeout" from="fade_timer" to="." method="_on_fade_timer_timeout"]

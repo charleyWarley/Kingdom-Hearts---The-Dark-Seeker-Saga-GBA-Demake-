@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhih6q8ow0txk"
+path="res://.godot/imported/se_sax_weap03_WAVE_000.wav-8e040335650309d91bbefe903f3fc5f9.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Sax Weapon/se_sax_weap03_WAVE/se_sax_weap03_WAVE_000.wav"
+dest_files=["res://.godot/imported/se_sax_weap03_WAVE_000.wav-8e040335650309d91bbefe903f3fc5f9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ldadu0g1vccb"
+path="res://.godot/imported/se_lex_weap03_WAVE_000.wav-0168312873608e4ee7f8199bf47a7304.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Lex Weapon/se_lex_weap03_WAVE/se_lex_weap03_WAVE_000.wav"
+dest_files=["res://.godot/imported/se_lex_weap03_WAVE_000.wav-0168312873608e4ee7f8199bf47a7304.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

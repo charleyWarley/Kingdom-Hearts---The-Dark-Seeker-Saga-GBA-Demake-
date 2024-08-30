@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cslm7wx1yh7oa"
+path="res://.godot/imported/se_xin_weap00_WAVE_002.wav-1550f307c70cb72448aa054a7cb771e0.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Xin Weapon/se_xin_weap00_WAVE/se_xin_weap00_WAVE_002.wav"
+dest_files=["res://.godot/imported/se_xin_weap00_WAVE_002.wav-1550f307c70cb72448aa054a7cb771e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4x6qw2k8o1m"
+path="res://.godot/imported/BBS Get Item.wav-30fa638b1e24d43db88828251e612b56.sample"
+
+[deps]
+
+source_file="res://audio/UI Sounds/BBS Get Item.wav"
+dest_files=["res://.godot/imported/BBS Get Item.wav-30fa638b1e24d43db88828251e612b56.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

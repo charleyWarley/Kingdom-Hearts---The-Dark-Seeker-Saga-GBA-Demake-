@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvsx2oduhciug"
+path="res://.godot/imported/se_gfy_weap02_WAVE_002.wav-0fc952154256b056562ee7157dd8bd23.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Goofy Weapon/se_gfy_weap02_WAVE/se_gfy_weap02_WAVE_002.wav"
+dest_files=["res://.godot/imported/se_gfy_weap02_WAVE_002.wav-0fc952154256b056562ee7157dd8bd23.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

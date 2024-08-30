@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmhk58ovca5ya"
+path="res://.godot/imported/se_zex_weap05_WAVE_002.wav-30b15674338fbaa171d322bd5f750c39.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Zex Weapon/se_zex_weap05_WAVE/se_zex_weap05_WAVE_002.wav"
+dest_files=["res://.godot/imported/se_zex_weap05_WAVE_002.wav-30b15674338fbaa171d322bd5f750c39.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

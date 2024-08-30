@@ -1,0 +1,165 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbllnv5cpn0f8"]
+
+[ext_resource type="Texture2D" uid="uid://crh1chy7yqqwi" path="res://images/sprite_sheets/Characters/Traverse Town/Goofy Classic.png" id="1_2p4c0"]
+[ext_resource type="Script" path="res://scripts/saved_games_menu.gd" id="1_3cdxy"]
+[ext_resource type="Texture2D" uid="uid://cpq6oiww5m6pi" path="res://images/sprite_sheets/Characters/Sora.png" id="1_o2pol"]
+[ext_resource type="Texture2D" uid="uid://beenhiwxkgyhg" path="res://images/sprite_sheets/Characters/Traverse Town/Donald Duck Classic.png" id="2_0ek4k"]
+[ext_resource type="Script" path="res://scripts/files.gd" id="4_8i16f"]
+[ext_resource type="Texture2D" uid="uid://c2cquucd8d5je" path="res://images/sprite_sheets/Miscellaneous Menus.png" id="4_m0ve5"]
+
+[node name="saved_games_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3cdxy")
+
+[node name="background" type="Control" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="background2" type="ColorRect" parent="background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.0196078, 0, 1)
+
+[node name="background3" type="ColorRect" parent="background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_right = -121.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.0313726, 0, 1)
+
+[node name="background4" type="ColorRect" parent="background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_right = -135.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00392157, 0.0509804, 0.00392157, 1)
+
+[node name="border" type="ColorRect" parent="background"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 152.0
+offset_right = 485.0
+offset_bottom = 153.0
+color = Color(0.384314, 0.658824, 0, 1)
+
+[node name="border2" type="ColorRect" parent="background"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 6.0
+offset_right = 495.0
+offset_bottom = 7.0
+color = Color(0.384314, 0.658824, 0, 1)
+
+[node name="character_segment" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 11.0
+offset_right = 119.0
+offset_bottom = 137.0
+
+[node name="goofy" type="Sprite2D" parent="character_segment"]
+texture_filter = 1
+position = Vector2(27, 61)
+texture = ExtResource("1_2p4c0")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(56, 201, 30, 64)
+
+[node name="donald" type="Sprite2D" parent="character_segment"]
+texture_filter = 1
+position = Vector2(64, 66)
+texture = ExtResource("2_0ek4k")
+region_enabled = true
+region_rect = Rect2(261, 59, 31, 45)
+
+[node name="sora" type="Sprite2D" parent="character_segment"]
+texture_filter = 1
+position = Vector2(47, 81)
+texture = ExtResource("1_o2pol")
+region_enabled = true
+region_rect = Rect2(9, 12, 31, 52)
+
+[node name="files" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.304
+anchor_top = 0.125
+anchor_right = 1.019
+anchor_bottom = 0.75
+offset_left = 0.0799866
+offset_right = -0.120026
+offset_bottom = -1.52588e-05
+script = ExtResource("4_8i16f")
+
+[node name="sfx" type="AudioStreamPlayer" parent="files"]
+
+[node name="pointer_spot1" type="Marker2D" parent="files"]
+position = Vector2(41, 14)
+
+[node name="pointer_spot2" type="Marker2D" parent="files"]
+position = Vector2(40, 74)
+
+[node name="file1" type="ColorRect" parent="files"]
+z_index = -1
+layout_mode = 0
+offset_left = 43.0
+offset_top = 17.0
+offset_right = 382.0
+offset_bottom = 51.0
+color = Color(0.670588, 0.364706, 0.262745, 1)
+
+[node name="file2" type="ColorRect" parent="files"]
+z_index = -1
+layout_mode = 0
+offset_left = 382.0
+offset_top = 99.0
+offset_right = 722.0
+offset_bottom = 121.0
+rotation = 3.14159
+color = Color(0.670588, 0.364706, 0.262745, 1)
+
+[node name="pointer" type="Sprite2D" parent="files"]
+z_index = 1
+texture_filter = 1
+position = Vector2(39, 28)
+texture = ExtResource("4_m0ve5")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(272, 143, 29, 26)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[connection signal="file_selected" from="files" to="." method="_on_files_file_selected"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

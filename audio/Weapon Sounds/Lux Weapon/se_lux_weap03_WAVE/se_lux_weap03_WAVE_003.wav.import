@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b826w1swjjx88"
+path="res://.godot/imported/se_lux_weap03_WAVE_003.wav-f796dfd1e6cdfbfefd19ea9bb69c93c1.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Lux Weapon/se_lux_weap03_WAVE/se_lux_weap03_WAVE_003.wav"
+dest_files=["res://.godot/imported/se_lux_weap03_WAVE_003.wav-f796dfd1e6cdfbfefd19ea9bb69c93c1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

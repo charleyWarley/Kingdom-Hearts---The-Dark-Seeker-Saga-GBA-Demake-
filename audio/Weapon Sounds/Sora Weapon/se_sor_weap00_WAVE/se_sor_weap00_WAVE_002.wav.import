@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ds0x377ersdke"
+path="res://.godot/imported/se_sor_weap00_WAVE_002.wav-4f35ea58b1785a3de7615bf76ef8b057.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Sora Weapon/se_sor_weap00_WAVE/se_sor_weap00_WAVE_002.wav"
+dest_files=["res://.godot/imported/se_sor_weap00_WAVE_002.wav-4f35ea58b1785a3de7615bf76ef8b057.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

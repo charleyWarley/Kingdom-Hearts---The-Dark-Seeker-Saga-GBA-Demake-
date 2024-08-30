@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://ykw1mx2vsuqd"]
+
+[ext_resource type="Script" path="res://scenes/command_menu.gd" id="1_q02wp"]
+[ext_resource type="Texture2D" uid="uid://dugxhrsjp0dgp" path="res://images/sprite_sheets/Command Menu.png" id="2_3an4b"]
+[ext_resource type="PackedScene" uid="uid://c5w7c3meao2je" path="res://scenes/command_button.tscn" id="3_7plls"]
+[ext_resource type="Theme" uid="uid://cpxd0rm5wk0ep" path="res://scenes/main_theme.tres" id="4_581gv"]
+
+[node name="command_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_right = 5.0
+grow_vertical = 0
+script = ExtResource("1_q02wp")
+
+[node name="command_background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(35.5, -37.5)
+scale = Vector2(1.01562, 1.35088)
+texture = ExtResource("2_3an4b")
+region_enabled = true
+region_rect = Rect2(89, 55, 64, 57)
+
+[node name="action_button" parent="command_background" instance=ExtResource("3_7plls")]
+position = Vector2(-2.46153, -2.22078)
+scale = Vector2(0.984616, 0.74026)
+
+[node name="magic_button" parent="command_background" instance=ExtResource("3_7plls")]
+position = Vector2(-2.46153, 9.62337)
+scale = Vector2(0.984616, 0.74026)
+
+[node name="item_button" parent="command_background" instance=ExtResource("3_7plls")]
+position = Vector2(-2.46153, 21.4675)
+scale = Vector2(0.984616, 0.74026)
+
+[node name="context_button" type="Sprite2D" parent="command_background"]
+position = Vector2(5.06782, -14.4568)
+scale = Vector2(0.984616, 0.74026)
+texture = ExtResource("2_3an4b")
+region_enabled = true
+region_rect = Rect2(9, 171, 78, 13)
+
+[node name="sfx" type="AudioStreamPlayer" parent="command_background/context_button"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="command_background/context_button"]
+anchors_preset = -1
+anchor_left = 0.115
+anchor_top = 0.115
+anchor_right = 0.115
+anchor_bottom = 0.115
+offset_left = -38.97
+offset_top = -6.495
+offset_right = 15.03
+offset_bottom = 2.505
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_581gv")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 7
+text = "open"

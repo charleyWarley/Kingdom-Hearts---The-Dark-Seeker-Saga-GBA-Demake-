@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d22u767dkpfyr"
+path="res://.godot/imported/BBS Confirm.wav-06a37d87495cc512639ab97b11a18876.sample"
+
+[deps]
+
+source_file="res://audio/UI Sounds/BBS Confirm.wav"
+dest_files=["res://.godot/imported/BBS Confirm.wav-06a37d87495cc512639ab97b11a18876.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

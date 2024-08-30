@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvlnwkt5ifam3"
+path="res://.godot/imported/se_xem_weap03_WAVE_002.wav-78b2953775ced87f9186a8d7c2d9888b.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Xem Weapon/se_xem_weap03_WAVE/se_xem_weap03_WAVE_002.wav"
+dest_files=["res://.godot/imported/se_xem_weap03_WAVE_002.wav-78b2953775ced87f9186a8d7c2d9888b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

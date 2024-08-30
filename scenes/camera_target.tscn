@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://uskducbkigux"]
+
+[ext_resource type="Script" path="res://scenes/characters/camera_target.gd" id="1_e0r3n"]
+
+[node name="camera_target" type="Marker2D"]
+script = ExtResource("1_e0r3n")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bcuxhe0pfdild"
+path="res://.godot/imported/se_vex_weap02_WAVE_003.wav-83c02f9ea9d1f5727b5e1f07989dba7f.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Vex Weapon/se_vex_weap02_WAVE/se_vex_weap02_WAVE_003.wav"
+dest_files=["res://.godot/imported/se_vex_weap02_WAVE_003.wav-83c02f9ea9d1f5727b5e1f07989dba7f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

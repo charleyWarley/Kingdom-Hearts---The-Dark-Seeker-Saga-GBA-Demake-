@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dlxu6soqi6wtr"
+path="res://.godot/imported/SE_SYS_WAVE_039.wav-c3c3dc7d408816631bda0bbd9be799d7.sample"
+
+[deps]
+
+source_file="res://audio/UI Sounds/more UI/SE_SYS_WAVE_039.wav"
+dest_files=["res://.godot/imported/SE_SYS_WAVE_039.wav-c3c3dc7d408816631bda0bbd9be799d7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c6ml6dy4rq21q"]
+
+[ext_resource type="Shader" path="res://shaders/jitter_filter.gdshader" id="1_5hyji"]
+
+[resource]
+shader = ExtResource("1_5hyji")

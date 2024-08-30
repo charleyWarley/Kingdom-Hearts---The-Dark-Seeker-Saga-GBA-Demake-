@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5w7c3meao2je"]
+
+[ext_resource type="Texture2D" uid="uid://dugxhrsjp0dgp" path="res://images/sprite_sheets/Command Menu.png" id="1_gp032"]
+[ext_resource type="Script" path="res://scenes/command_button.gd" id="2_kdhmy"]
+[ext_resource type="Theme" uid="uid://cpxd0rm5wk0ep" path="res://scenes/main_theme.tres" id="2_x7a27"]
+
+[sub_resource type="Animation" id="Animation_ddind"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_umfgh"]
+resource_name = "available"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_7g823"]
+resource_name = "hovering"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_bp4ib"]
+resource_name = "unavailable"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_unblf"]
+_data = {
+"RESET": SubResource("Animation_ddind"),
+"available": SubResource("Animation_umfgh"),
+"hovering": SubResource("Animation_7g823"),
+"unavailable": SubResource("Animation_bp4ib")
+}
+
+[node name="command_button" type="Sprite2D"]
+texture = ExtResource("1_gp032")
+vframes = 7
+frame = 5
+region_enabled = true
+region_rect = Rect2(4, 7, 78, 105)
+script = ExtResource("2_kdhmy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_unblf")
+}
+
+[node name="command_label" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_left = 0.231
+anchor_top = 0.167
+anchor_right = 0.231
+anchor_bottom = 0.167
+offset_left = -39.018
+offset_top = -7.505
+offset_right = 17.982
+offset_bottom = 2.495
+theme = ExtResource("2_x7a27")
+theme_override_colors/default_color = Color(0.988235, 0.988235, 0.988235, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 7
+text = "attack"
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+volume_db = -25.0

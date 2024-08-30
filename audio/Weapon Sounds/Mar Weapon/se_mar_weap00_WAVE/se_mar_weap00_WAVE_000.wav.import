@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://br25w67fbo05r"
+path="res://.godot/imported/se_mar_weap00_WAVE_000.wav-3cb8d315943e074ed8d6788fa2b7a66e.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Mar Weapon/se_mar_weap00_WAVE/se_mar_weap00_WAVE_000.wav"
+dest_files=["res://.godot/imported/se_mar_weap00_WAVE_000.wav-3cb8d315943e074ed8d6788fa2b7a66e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

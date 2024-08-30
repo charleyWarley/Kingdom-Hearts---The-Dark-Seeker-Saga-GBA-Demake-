@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxgoj0433vjkl"
+path="res://.godot/imported/se_axl_weap01_WAVE_002.wav-5a6e486f48ed8cd954cb2b3aa0c34f1e.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Axl Weapon/se_axl_weap01_WAVE/se_axl_weap01_WAVE_002.wav"
+dest_files=["res://.godot/imported/se_axl_weap01_WAVE_002.wav-5a6e486f48ed8cd954cb2b3aa0c34f1e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

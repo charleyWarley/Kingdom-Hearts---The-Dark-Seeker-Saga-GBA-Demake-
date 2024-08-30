@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duwwsmm0qgte"
+path="res://.godot/imported/se_rik_weap02_WAVE_000.wav-43e29810e944bc52b04d5891e1514cfa.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Riku Weapon/se_rik_weap02_WAVE/se_rik_weap02_WAVE_000.wav"
+dest_files=["res://.godot/imported/se_rik_weap02_WAVE_000.wav-43e29810e944bc52b04d5891e1514cfa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

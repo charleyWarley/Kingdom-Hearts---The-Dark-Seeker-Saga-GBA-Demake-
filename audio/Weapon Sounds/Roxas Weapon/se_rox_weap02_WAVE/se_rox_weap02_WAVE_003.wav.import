@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cphuw6alo0qon"
+path="res://.godot/imported/se_rox_weap02_WAVE_003.wav-adead68925bd581afcf07a7fc8bc481e.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Roxas Weapon/se_rox_weap02_WAVE/se_rox_weap02_WAVE_003.wav"
+dest_files=["res://.godot/imported/se_rox_weap02_WAVE_003.wav-adead68925bd581afcf07a7fc8bc481e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

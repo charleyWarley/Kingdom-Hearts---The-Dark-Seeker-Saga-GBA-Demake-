@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://caxil3a4mq8ms"
+path="res://.godot/imported/se_dmx_weap03_WAVE_002.wav-0c736a9aedd7a461a1a93699b5d14034.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/dmx weapon/se_dmx_weap03_WAVE/se_dmx_weap03_WAVE_002.wav"
+dest_files=["res://.godot/imported/se_dmx_weap03_WAVE_002.wav-0c736a9aedd7a461a1a93699b5d14034.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

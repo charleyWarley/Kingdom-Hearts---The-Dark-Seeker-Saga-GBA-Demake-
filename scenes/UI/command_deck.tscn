@@ -1,0 +1,403 @@
+[gd_scene load_steps=11 format=3 uid="uid://d4kekg0v37yd6"]
+
+[ext_resource type="Texture2D" uid="uid://dth2n3dy3fbiw" path="res://images/sprite_sheets/Bars  Icons.png" id="1_3aehi"]
+[ext_resource type="Texture2D" uid="uid://c620u1rrnem80" path="res://images/sprite_sheets/Map Pieces.png" id="1_71fyj"]
+[ext_resource type="Script" path="res://scripts/card_field.gd" id="1_506d5"]
+[ext_resource type="Script" path="res://scripts/UI_scripts/command_deck.gd" id="2_i252a"]
+[ext_resource type="Script" path="res://scripts/UI_scripts/card_reload_button.gd" id="2_riieo"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_41qdi"]
+viewport_path = NodePath("command_deck/focus_card_spot/reload/SubViewport")
+
+[sub_resource type="Animation" id="Animation_ulm5v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_h62fk"]
+resource_name = "reload"
+length = 3.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15, 3.2, 3.25, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [11, 1, 12, 2, 13, 3, 14, 4, 15, 5, 16, 6, 17, 7, 18, 8, 19, 9, 30, 20, 31, 21, 32, 22, 33, 23, 34, 24, 35, 25, 36, 26, 37, 27, 38, 28, 39, 29, 50, 40, 51, 41, 52, 42, 53, 43, 54, 44, 55, 45, 56, 46, 57, 47, 58, 48, 59, 49, 70, 60, 71, 61, 72, 62, 73, 63, 73]
+}
+
+[sub_resource type="Animation" id="Animation_g7iin"]
+resource_name = "still"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c6rhv"]
+_data = {
+"RESET": SubResource("Animation_ulm5v"),
+"reload": SubResource("Animation_h62fk"),
+"still": SubResource("Animation_g7iin")
+}
+
+[node name="card_field" type="Control" node_paths=PackedStringArray("active", "player_deck")]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+script = ExtResource("1_506d5")
+active = NodePath("active_card_spot")
+player_deck = NodePath("command_deck")
+
+[node name="active_card_spot" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 116.0
+offset_top = -28.0
+offset_right = 116.0
+offset_bottom = -28.0
+
+[node name="command_deck" type="Control" parent="." node_paths=PackedStringArray("focus", "left", "right", "unseen")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+script = ExtResource("2_i252a")
+focus = NodePath("focus_card_spot")
+left = NodePath("left_card_slot")
+right = NodePath("right_card_slot")
+unseen = NodePath("unseen_cards")
+
+[node name="left_card_slot" type="Control" parent="command_deck"]
+anchors_preset = 0
+offset_top = -3.0
+offset_bottom = -3.0
+
+[node name="green" type="NinePatchRect" parent="command_deck/left_card_slot"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(583, 5, 29, 39)
+patch_margin_left = 3
+patch_margin_top = 14
+patch_margin_right = 4
+patch_margin_bottom = 3
+
+[node name="right_card_slot" type="Control" parent="command_deck"]
+anchors_preset = 0
+offset_left = 33.0
+offset_top = 20.0
+offset_right = 33.0
+offset_bottom = 20.0
+
+[node name="red" type="NinePatchRect" parent="command_deck/right_card_slot"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(523, 5, 28, 39)
+patch_margin_left = 3
+patch_margin_top = 13
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="focus_card_spot" type="Control" parent="command_deck"]
+anchors_preset = 0
+offset_left = 26.0
+offset_top = 8.0
+offset_right = 26.0
+offset_bottom = 8.0
+
+[node name="reload" type="NinePatchRect" parent="command_deck/focus_card_spot" node_paths=PackedStringArray("card_animation", "number")]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_41qdi")
+script = ExtResource("2_riieo")
+card_animation = NodePath("SubViewport/reload/reload_animation")
+number = NodePath("SubViewport/reload/number")
+
+[node name="SubViewport" type="SubViewport" parent="command_deck/focus_card_spot/reload"]
+transparent_bg = true
+size = Vector2i(29, 40)
+
+[node name="reload" type="Sprite2D" parent="command_deck/focus_card_spot/reload/SubViewport"]
+texture = ExtResource("1_3aehi")
+centered = false
+hframes = 20
+vframes = 4
+region_enabled = true
+region_rect = Rect2(27, 280, 580, 164)
+
+[node name="reload_animation" type="AnimationPlayer" parent="command_deck/focus_card_spot/reload/SubViewport/reload"]
+libraries = {
+"": SubResource("AnimationLibrary_c6rhv")
+}
+autoplay = "reload"
+
+[node name="number" type="Sprite2D" parent="command_deck/focus_card_spot/reload/SubViewport/reload"]
+position = Vector2(1.74, 17.785)
+texture = ExtResource("1_3aehi")
+centered = false
+hframes = 3
+region_enabled = true
+region_rect = Rect2(144, 417, 64, 16)
+
+[node name="unseen_cards" type="Control" parent="command_deck"]
+anchors_preset = 0
+offset_left = -66.0
+offset_top = -3.0
+offset_right = -66.0
+offset_bottom = -3.0
+
+[node name="green2" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(583, 5, 29, 39)
+patch_margin_left = 3
+patch_margin_top = 14
+patch_margin_right = 4
+patch_margin_bottom = 3
+
+[node name="red2" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(523, 5, 28, 39)
+patch_margin_left = 3
+patch_margin_top = 13
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="red3" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(523, 5, 28, 39)
+patch_margin_left = 3
+patch_margin_top = 13
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="red4" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(523, 5, 28, 39)
+patch_margin_left = 3
+patch_margin_top = 13
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="red5" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(523, 5, 28, 39)
+patch_margin_left = 3
+patch_margin_top = 13
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="green3" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(583, 5, 29, 39)
+patch_margin_left = 3
+patch_margin_top = 14
+patch_margin_right = 4
+patch_margin_bottom = 3
+
+[node name="green4" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(583, 5, 29, 39)
+patch_margin_left = 3
+patch_margin_top = 14
+patch_margin_right = 4
+patch_margin_bottom = 3
+
+[node name="red6" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(523, 5, 28, 39)
+patch_margin_left = 3
+patch_margin_top = 13
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="green5" type="NinePatchRect" parent="command_deck/unseen_cards"]
+custom_minimum_size = Vector2(29, 39)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.5
+offset_top = -19.5
+offset_right = 14.5
+offset_bottom = 19.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_71fyj")
+region_rect = Rect2(583, 5, 29, 39)
+patch_margin_left = 3
+patch_margin_top = 14
+patch_margin_right = 4
+patch_margin_bottom = 3
+
+[connection signal="card_received" from="." to="command_deck" method="_on_card_field_card_received"]
+[connection signal="card_activated" from="command_deck" to="." method="_on_command_deck_card_activated"]
+[connection signal="deck_reloaded" from="command_deck/focus_card_spot/reload" to="command_deck" method="_on_reload_deck_reloaded"]
+[connection signal="animation_finished" from="command_deck/focus_card_spot/reload/SubViewport/reload/reload_animation" to="command_deck/focus_card_spot/reload" method="_on_reload_animation_animation_finished"]

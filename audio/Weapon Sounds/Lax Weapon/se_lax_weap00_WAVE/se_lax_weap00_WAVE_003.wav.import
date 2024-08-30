@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdkksu53fthgp"
+path="res://.godot/imported/se_lax_weap00_WAVE_003.wav-5d301749713aeb9d5f1353326fed1e9e.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Lax Weapon/se_lax_weap00_WAVE/se_lax_weap00_WAVE_003.wav"
+dest_files=["res://.godot/imported/se_lax_weap00_WAVE_003.wav-5d301749713aeb9d5f1353326fed1e9e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://f0rarfr82h27"
+path="res://.godot/imported/se_mic_weap00_WAVE_001.wav-91697f0f1514f9a88d0318161630931d.sample"
+
+[deps]
+
+source_file="res://audio/Weapon Sounds/Mickey Weapon/se_mic_weap00_WAVE/se_mic_weap00_WAVE_001.wav"
+dest_files=["res://.godot/imported/se_mic_weap00_WAVE_001.wav-91697f0f1514f9a88d0318161630931d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
