@@ -17,7 +17,8 @@ func exit():
 func update(_delta):
 	if Global.player.motion_vector != Vector2.ZERO:
 		animation.play(Global.player.direction_name, -1, 0.0, true)
-		
+	if Input.is_action_just_released("jump"):
+		transition.emit("FallingPlayerState")
 	if Global.player.is_grounded:
 		if Global.player.velocity.length() > 0:
 			transition.emit("WalkingPlayerState")

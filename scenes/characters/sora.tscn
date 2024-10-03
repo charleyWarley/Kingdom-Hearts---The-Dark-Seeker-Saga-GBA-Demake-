@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dqjo2lgvlkrb3"]
+[gd_scene load_steps=49 format=3 uid="uid://dqjo2lgvlkrb3"]
 
 [ext_resource type="Script" path="res://scripts/sora.gd" id="1_yucho"]
 [ext_resource type="Texture2D" uid="uid://bre0klijcawai" path="res://images/sprite_sheets/Characters/Sora-No-Keyblade.png" id="2_62860"]
@@ -746,6 +746,96 @@ _data = {
 "up_right": SubResource("Animation_1hxyr")
 }
 
+[sub_resource type="Animation" id="Animation_mn8us"]
+resource_name = "down"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [84, 85, 86, 87]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k6ibm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [84]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fpced"]
+resource_name = "down_left"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [111, 112, 113, 114]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f7m1v"]
+_data = {
+"RESET": SubResource("Animation_k6ibm"),
+"down": SubResource("Animation_mn8us"),
+"down_left": SubResource("Animation_fpced")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6gas"]
 size = Vector2(16, 5)
 
@@ -773,7 +863,7 @@ position = Vector2(0, -26)
 texture = ExtResource("2_62860")
 hframes = 9
 vframes = 22
-frame = 72
+frame = 84
 region_enabled = true
 region_rect = Rect2(0, 0, 432, 1408)
 
@@ -847,6 +937,11 @@ script = ExtResource("8_itq0r")
 
 [node name="FallingPlayerState" type="Node" parent="player_state_machine"]
 script = ExtResource("10_sg7u8")
+
+[node name="fall_animation" type="AnimationPlayer" parent="player_state_machine/FallingPlayerState"]
+libraries = {
+"": SubResource("AnimationLibrary_f7m1v")
+}
 
 [node name="LandingPlayerState" type="Node" parent="player_state_machine"]
 script = ExtResource("11_3tymk")

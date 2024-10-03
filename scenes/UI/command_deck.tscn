@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4kekg0v37yd6"]
+[gd_scene load_steps=12 format=3 uid="uid://d4kekg0v37yd6"]
 
 [ext_resource type="Texture2D" uid="uid://dth2n3dy3fbiw" path="res://images/sprite_sheets/Bars  Icons.png" id="1_3aehi"]
 [ext_resource type="Texture2D" uid="uid://c620u1rrnem80" path="res://images/sprite_sheets/Map Pieces.png" id="1_71fyj"]
 [ext_resource type="Script" path="res://scripts/card_field.gd" id="1_506d5"]
 [ext_resource type="Script" path="res://scripts/UI_scripts/command_deck.gd" id="2_i252a"]
 [ext_resource type="Script" path="res://scripts/UI_scripts/card_reload_button.gd" id="2_riieo"]
+[ext_resource type="Material" uid="uid://c6ml6dy4rq21q" path="res://shaders/jitter_filter.tres" id="5_hgomj"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_41qdi"]
 viewport_path = NodePath("command_deck/focus_card_spot/reload/SubViewport")
@@ -165,9 +166,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -14.5
-offset_top = -19.5
+offset_top = -20.0
 offset_right = 14.5
-offset_bottom = 19.5
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("ViewportTexture_41qdi")
@@ -177,9 +178,11 @@ number = NodePath("SubViewport/reload/number")
 
 [node name="SubViewport" type="SubViewport" parent="command_deck/focus_card_spot/reload"]
 transparent_bg = true
-size = Vector2i(29, 40)
+size = Vector2i(27, 41)
 
 [node name="reload" type="Sprite2D" parent="command_deck/focus_card_spot/reload/SubViewport"]
+texture_filter = 2
+material = ExtResource("5_hgomj")
 texture = ExtResource("1_3aehi")
 centered = false
 hframes = 20
@@ -194,6 +197,7 @@ libraries = {
 autoplay = "reload"
 
 [node name="number" type="Sprite2D" parent="command_deck/focus_card_spot/reload/SubViewport/reload"]
+material = ExtResource("5_hgomj")
 position = Vector2(1.74, 17.785)
 texture = ExtResource("1_3aehi")
 centered = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj71km7xqkjmy"
-path="res://.godot/imported/Aladdin.png-502a00d80ea5b3ed7e10d35014b2d500.ctex"
+uid="uid://hbig4yo1sw0y"
+path="res://.godot/imported/Alice.png-3e98a4e3c00b9e805ad00a87bcbe7a03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sprite_sheets/Characters/Aladdin.png"
-dest_files=["res://.godot/imported/Aladdin.png-502a00d80ea5b3ed7e10d35014b2d500.ctex"]
+source_file="res://images/sprite_sheets/Characters/Wonderland/Alice.png"
+dest_files=["res://.godot/imported/Alice.png-3e98a4e3c00b9e805ad00a87bcbe7a03.ctex"]
 
 [params]
 

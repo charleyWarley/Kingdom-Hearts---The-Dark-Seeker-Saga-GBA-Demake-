@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dou6exaxbsugm"
-path="res://.godot/imported/Maleficent.png-66fb9bd0f2c53ba87968967937ebf034.ctex"
+uid="uid://b52wgv18amuk"
+path="res://.godot/imported/6 - Zexion.png-b7c8e0c328604b1df585bee87ab81130.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sprite_sheets/Characters/Maleficent.png"
-dest_files=["res://.godot/imported/Maleficent.png-66fb9bd0f2c53ba87968967937ebf034.ctex"]
+source_file="res://images/sprite_sheets/Characters/Organization XIII/6 - Zexion.png"
+dest_files=["res://.godot/imported/6 - Zexion.png-b7c8e0c328604b1df585bee87ab81130.ctex"]
 
 [params]
 

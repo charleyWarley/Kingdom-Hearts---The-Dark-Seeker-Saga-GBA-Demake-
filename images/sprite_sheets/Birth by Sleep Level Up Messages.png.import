@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdhl5g3bcupb"
-path="res://.godot/imported/Aladdin Portraits.png-38fc94898c94a355eb7e85f495d30beb.ctex"
+uid="uid://dktiolxncteul"
+path="res://.godot/imported/Birth by Sleep Level Up Messages.png-997879056d8d04eea4bfc2b6d86c0543.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sprite_sheets/Characters/Aladdin Portraits.png"
-dest_files=["res://.godot/imported/Aladdin Portraits.png-38fc94898c94a355eb7e85f495d30beb.ctex"]
+source_file="res://images/sprite_sheets/Birth by Sleep Level Up Messages.png"
+dest_files=["res://.godot/imported/Birth by Sleep Level Up Messages.png-997879056d8d04eea4bfc2b6d86c0543.ctex"]
 
 [params]
 

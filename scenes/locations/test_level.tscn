@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dgq6irroalw1n"]
+[gd_scene load_steps=16 format=3 uid="uid://dgq6irroalw1n"]
 
 [ext_resource type="Script" path="res://scenes/locations/level.gd" id="1_4hdek"]
 [ext_resource type="Shader" path="res://shaders/jitter_filter.gdshader" id="2_1xao6"]
 [ext_resource type="Texture2D" uid="uid://srs2q2i2afpm" path="res://images/sprite_sheets/32x32 isometric/full tile set.png" id="2_808ek"]
+[ext_resource type="Texture2D" uid="uid://up4up10gbxag" path="res://images/sprite_sheets/Locations/Station of Calling Kingdom Hearts GBA-Style.png" id="2_exxk5"]
 [ext_resource type="Script" path="res://scenes/locations/fall_area.gd" id="5_gs137"]
 [ext_resource type="Script" path="res://scenes/locations/ledge.gd" id="5_sljai"]
 [ext_resource type="PackedScene" uid="uid://dqjo2lgvlkrb3" path="res://scenes/characters/sora.tscn" id="5_x15ti"]
@@ -214,9 +215,19 @@ script = ExtResource("1_4hdek")
 metadata/_edit_horizontal_guides_ = [479.0]
 
 [node name="start_position" type="Marker2D" parent="."]
-position = Vector2(122, 122)
+position = Vector2(114, 255)
+
+[node name="TextureRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_left = -108.0
+offset_top = 30.0
+offset_right = 429.0
+offset_bottom = 567.0
+texture = ExtResource("2_exxk5")
+region_rect = Rect2(1, 82, 462, 492)
 
 [node name="ground_tiles" type="TileMap" parent="."]
+visible = false
 y_sort_enabled = true
 texture_filter = 2
 material = SubResource("ShaderMaterial_h3i3l")
